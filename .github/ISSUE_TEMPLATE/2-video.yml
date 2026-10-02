@@ -1,0 +1,48 @@
+name: Video
+description: Suggest a guide or gameplay video worth watching.
+title: "[Video] "
+labels: ["content", "video"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Video link
+      placeholder: https://www.youtube.com/watch?v=...
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Video title
+    validations:
+      required: true
+  - type: input
+    id: creator
+    attributes:
+      label: Creator (name and channel link)
+      placeholder: "Creator · https://www.youtube.com/@creator"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - guide
+        - build
+        - boss / raid
+        - farming
+        - mechanics
+        - tech
+        - co-op
+        - gameplay
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it worth watching?
+      description: One or two sentences, in your own words.
+    validations:
+      required: true

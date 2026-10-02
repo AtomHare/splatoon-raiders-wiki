@@ -1,0 +1,39 @@
+name: Community tip
+description: Share a useful tip posted by a player (X/Twitter, Bluesky, Reddit, Discord...).
+title: "[Tip] "
+labels: ["content", "tip"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tips are always **credited and linked**. Please summarize the tip in your own words rather than copy-pasting the post.
+  - type: input
+    id: link
+    attributes:
+      label: Link to the original post
+      placeholder: https://x.com/author/status/123
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author handle
+      placeholder: "@author"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Post date
+      placeholder: YYYY-MM-DD
+  - type: textarea
+    id: summary
+    attributes:
+      label: The tip, in your own words
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot (optional)
+      description: Drag and drop a screenshot of the post here, in case it gets deleted later.

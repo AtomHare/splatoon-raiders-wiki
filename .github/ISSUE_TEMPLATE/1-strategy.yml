@@ -1,0 +1,59 @@
+name: Build or strategy
+description: Suggest a build (loadout) or a strategy (boss, raid, team setup, farming route, tech).
+title: "[Build/Strategy] "
+labels: ["content", "strategy"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping! No Git knowledge needed: fill this in and a maintainer will turn it into a page.
+        **Check [Inkipedia](https://splatoonwiki.org) first:** stats and descriptions belong there. Here we want the *how* and the *why*.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What are you submitting?
+      options:
+        - Build (weapon + ink tank + gadgets)
+        - Boss / raid strategy
+        - Movement or combat tech
+        - Co-op team setup
+        - Farming route
+        - Beginner guide
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: "e.g. Solo strategy for <boss name>"
+    validations:
+      required: true
+  - type: textarea
+    id: loadout
+    attributes:
+      label: Loadout (if any)
+      description: Weapon, ink tank and gadgets. Names only, no stats needed.
+      placeholder: |
+        Weapon:
+        Ink tank:
+        Gadgets:
+  - type: textarea
+    id: content
+    attributes:
+      label: The strategy / why the build works
+      description: Explain it in your own words. Steps, priorities, common mistakes.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to posts or videos this is based on, with the author's handle. Leave empty if it's your own.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This is strategy/know-how, not game data already on Inkipedia.
+          required: true

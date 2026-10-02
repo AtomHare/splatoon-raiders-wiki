@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Game data (stats, enemies, items, story) → Inkipedia
+    url: https://splatoonwiki.org
+    about: This wiki covers strategy and know-how only. Raw game data belongs on Inkipedia.
+  - name: Contribution guide
+    url: https://github.com/AtomHare/splatoon-raiders-wiki/blob/main/CONTRIBUTING.md
+    about: How to contribute, what goes where, and the sourcing rules.

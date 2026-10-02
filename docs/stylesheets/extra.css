@@ -1,0 +1,62 @@
+/* Responsive YouTube embeds: <iframe class="video" ...> */
+.md-typeset iframe.video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 0.2rem;
+  margin: 1em 0;
+}
+
+/* Screenshots never overflow the content column */
+.md-typeset img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Links to Inkipedia get a small "external" icon so readers know they leave the site */
+.md-typeset a[href^="https://splatoonwiki.org"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.15em;
+  vertical-align: -0.05em;
+  background-color: currentColor;
+  opacity: 0.7;
+  -webkit-mask: var(--external-icon) no-repeat center / contain;
+  mask: var(--external-icon) no-repeat center / contain;
+}
+
+:root {
+  /* Material Design "open-in-new" icon */
+  --external-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"/></svg>');
+}
+
+/* No icon on the home page cards' arrow links, which already have one */
+.md-typeset .grid.cards a[href^="https://splatoonwiki.org"]::after {
+  display: none;
+}
+
+/* Hall of fame: build revealed in a native popover (no JavaScript needed).
+   <button popovertarget="ID"> opens <div id="ID" class="build-popup" popover> */
+.md-typeset .build-popup {
+  width: min(40rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 4rem);
+  overflow: auto;
+  padding: 1rem 1.25rem;
+  border: 0;
+  border-radius: 0.4rem;
+  color: var(--md-default-fg-color);
+  background-color: var(--md-default-bg-color);
+  box-shadow: var(--md-shadow-z3);
+}
+
+.md-typeset .build-popup::backdrop {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+.md-typeset .build-popup > :first-child {
+  margin-top: 0;
+}
